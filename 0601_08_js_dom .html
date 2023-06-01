@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div>
+        <ul id="myUl">    
+            <li>amy</li>
+            <li>bob</li>
+            <li>cat</li>
+        </ul>
+
+    </div>
+    <button type="button" id="addBtn">add</button>
+    <button type="button" id="delBtn">del</button>
+    
+
+    <script>
+        const myUl = document.getElementById('myUl');
+        const addBtn = document.getElementById('addBtn');
+        const delBtn = document.getElementById('delBtn');
+      
+
+
+        let data = {
+            name1 : 'dog',
+            name2 : 'egg',
+            name3 : 'fox',
+
+        }
+        console.log(data.name1);
+
+        addBtn.addEventListener('click',function(){
+            //  creat element <li></li>
+            let li = document.createElement('li')
+
+            // 
+            li.style.color = 'red';
+            li.setAttribute('class','test');
+            li.setAttribute('data-test','hello');
+            
+
+            console.log(li);
+
+            //  creat TsxtNode 
+            let textNode = document.createTextNode(data.name1)
+            console.log(textNode);
+
+            li.appendChild(textNode);
+
+            myUl.appendChild(li);           
+        })
+        delBtn.addEventListener('click',function(){
+            console.log('delok');
+            myUl.removeChild(myUl.lastElementChild)
+                     
+        })
+       
+
+
+    </script>
+</body>
+</html>

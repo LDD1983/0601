@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object-oriented</title>
+</head>
+<body>
+    <h1>object-oriented</h1>
+
+    <button type="button" id="myBtn">myBtn</button>
+
+
+
+    <script>
+        function myCallback() {
+            console.log('myCallback ok');
+        }  
+          
+        const myBtn = document.getElementById('myBtn');
+
+
+        // declare object properties and methods
+
+        let myObj = {
+            'name': 'amy',
+            'mobile': '0911-111-111',
+            'hello': function () {
+                console.log('hello method ok ');
+                return 'hello';
+            },
+            'sayAll': function(){
+                console.log('this',this);
+                console.log(this.hello(),this.name,this.mobile);
+            },
+            // methods use Arrow function 
+            'helloArrow':()=>{
+                console.log('hello Arrow');
+            },
+        }
+        // object properties => [ ], . 
+        console.log('myObj.name',myObj.name);
+       
+
+        myBtn.addEventListener('click',function(){
+            myObj.hello();
+            myObj.sayAll();
+        });
+
+        myBtn.addEventListener('click',myCallback
+        );
+
+        myObj.hello();
+        myObj.helloArrow();
+
+
+
+
+
+            
+        
+    </script>
+    
+</body>
+</html>

@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>&#x1F600</title>
 </head>
 <body>
+    <button type="button" id="myBtn">myBtn</button>
+    <button type="button" id="myBtnArrow">myBtnArrow</button>
     
+
+
+    <script>
+       
+
+        function good(){
+            console.log('good');
+        }
+
+        const myBtn = document.getElementById('myBtn');
+        const myBtnArrow = document.getElementById('myBtnArrow');
+        // //////////////////      call back function    ////////////////////////// 
+        // myBtn.addEventListener('click',function(){
+        //     console.log('mybtn full function ok');
+        // })
+
+        /////////////        arrow function
+        // ////////////         箭頭函式
+
+        // ////////////              no argument  ///////////////////////////
+        myBtn.addEventListener('click',function(){
+            console.log('myBtn full function ok');
+            console.log('this',this);
+        })
+        myBtnArrow.addEventListener('click',()=>{
+            console.log('myBtnArrow ok');
+            console.log('this',this);
+        })
+
+        ////////////////////       一個argument 可以省略 ( ) /////////////////////
+        // myBtn.addEventListener('click',value =>{
+        //     console.log('myArrow with value ok');
+        // })
+        ////////////    像這樣( forEach 內建 )   /////////////////////////
+        // array.forEach(element => {
+            
+        // });
+
+    </script>
 </body>
 </html>

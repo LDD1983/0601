@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#x1F600</title>
+    <style>
+        h1,
+        div      
+        {
+          margin: 10px auto;  
+          text-align: center;
+        }
+
+        
+        
+    </style>
+
+    
+</head>
+
+<body>
+    <h1>Arrow Function</h1>
+    <div> 
+        <button type="button" id="myBtn">myBtn</button>
+        <button type="button" id="myBtnArrow">myBtnArrow</button>
+    </div>
+   
+    
+        <h2>//////////  箭頭函式與return的用法 //////////</h2>
+
+
+        <h3>let myArr = [1, 2, 3, 4, 5,]; <br>
+            let mapArr = myArr.map(function (value, key) { <br>
+                return value * 2;<br>
+            }) <br>
+            <br>
+            <br>
+            <span style="color:red">console.log('mapArr', mapArr); <br></span> 
+        </h3>
+        <hr>
+        <h3> let mapArrowArr = myArr.map(value => value * 2);<br>
+            <br>
+            
+             //參數只有一個 ( ) 省略 <br>
+             //( value , key ) => { return value * 2 }<br>
+             <br>
+            <span style="color: red;"> console.log('mapArrowArr', mapArrowArr);<br></span>   
+        </h3>
+    
+
+
+
+    <script>
+
+        // 綁定 binding?
+
+        const myBtn = document.getElementById('myBtn');
+        const myBtnArrow = document.getElementById('myBtnArrow');
+
+
+        // //////////////////      call back function    ////////////////////////// 
+
+        // myBtn.addEventListener('click',function(){
+        //     console.log('mybtn full function ok');
+        // })
+
+
+
+
+        myBtn.addEventListener('click', function () {
+            console.log('myBtn full function ok');
+            console.log('this', this);
+        })
+
+        /////////////        arrow function
+        // ////////////         箭頭函式
+
+        myBtnArrow.addEventListener('click', () => {
+            console.log('myBtnArrow Arrow Function ok');
+            console.log('this', this);
+        })
+
+
+        //////////  箭頭函式與return的用法 //////////
+        
+        let myArr = [1, 2, 3, 4, 5,];
+        let mapArr = myArr.map(function (value, key) {
+            return value * 2;
+        })
+        console.log('mapArr', mapArr);
+
+        // //////////////////////  參數只有一個 ( ) 省略 
+        // ///////////////////     ( value , key ) => { return value * 2 }
+        let mapArrowArr = myArr.map(value => value * 2);
+        console.log('mapArrowArr', mapArrowArr);
+
+        ////////////////////       一個參數可以省略 ( ) /////////////////////
+        // myBtn.addEventListener('click',value =>{
+        //     console.log('myArrow with value ok');
+        // })
+
+        ////////////    像( forEach 內建的element )   /////////////////////////
+        //                 array.forEach(element => {
+        //                 });
+
+    </script>
+</body>
+
+</html>

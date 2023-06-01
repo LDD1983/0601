@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div>
+        <ul id="myUl">    
+            <li>amy</li>
+            <li>bob</li>
+            <li>cat</li>
+        </ul>
+
+    </div>
+    <button type="button" id="myBtn">dog</button>
+    <button type="button" id="myBtn2">egg</button>
+    <button type="button" id="myBtn3">fox</button>
+
+    <script>
+        const myUl = document.getElementById('myUl');
+        const myBtn = document.getElementById('myBtn');
+        const myBtn2 = document.getElementById('myBtn2');
+        const myBtn3 = document.getElementById('myBtn3');
+       
+
+
+        let data = {
+            name1 : 'dog',
+            name2 : 'egg',
+            name3 : 'fox',
+
+        }
+        console.log(data.name);
+
+        myBtn.addEventListener('click',function(){
+            let li = document.createElement('li')
+            console.log(li);
+            let textNode = document.createTextNode(data.name1)
+            console.log(textNode);
+            li.appendChild(textNode);
+
+            myUl.appendChild(li);           
+        })
+        myBtn2.addEventListener('click',function(){
+            let li = document.createElement('li')
+            console.log(li);
+            let textNode = document.createTextNode(data.name2)
+            console.log(textNode);
+            li.appendChild(textNode);
+
+            myUl.appendChild(li);           
+        })
+        myBtn3.addEventListener('click',function(){
+            let li = document.createElement('li')
+            console.log(li);
+            let textNode = document.createTextNode(data.name3)
+            console.log(textNode);
+            li.appendChild(textNode);
+
+            myUl.appendChild(li);           
+        })
+
+
+    </script>
+</body>
+</html>

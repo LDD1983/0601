@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           
+            box-sizing: border-box;
+
+        }
+        h1{
+            text-align: center;
+        }
+        
+        input{
+            display:inline-block;
+            width:100px ;
+            height: 30px;
+            /* border: none; */
+            border-bottom: 1px solid black;  
+            margin: 0;   
+            text-align: center; 
+            padding-top: 5px;
+          }
+        
+        .con{
+            display: flex;
+            justify-content: center;
+                  
+        }
+        .btn{
+            background-color:#ccc;
+            opacity: 0.7;
+        }
+        .btn:hover{
+            opacity: 1;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>成績計算</h1>
+    <div id="myCon">
+        <div class="con">
+            <input type="text" name="" id="" readonly value="name">
+            <input type="text" name="" id="" readonly value="chinese">
+            <input type="text" name="" id="" readonly value="english">
+            <input type="text" name="" id="" readonly value="math">
+            <input type="button" value="">
+            <input type="text" name="" id="" readonly value="sum">            
+            <input type="text" name="" id="" readonly value="avg">
+        </div>
+        <div class="con">
+            <input type="text" name="" id="myName">
+            <input type="text" name="" id="myChinese" value="80">
+            <input type="text" name="" id="myEnglish" value="81">
+            <input type="text" name="" id="myMath" value="82">
+            <input type="button" value="Amy Data" id="myBtn"> 
+            <input type="text" name="" id="mySum">
+            <input type="text" name="" id="myAvg">       
+        </div>  
+    </div>
+    <div class="con button">
+        <input type="button" value="copy" id="copyBtn">
+    </div>
+    
+
+
+
+
+    <script>
+        // function sumChange(){
+        //     let myChinese.value = 
+        // }
+
+
+        const myName = document.getElementById('myName');
+        const myChinese = document.getElementById('myChinese');
+        const myEnglish = document.getElementById('myEnglish');
+        const myMath = document.getElementById('myMath');
+        
+        const myBtn = document.getElementById('myBtn');
+        const mySum = document.getElementById('mySum');
+        const myAvg = document.getElementById('myAvg');
+        const copyBtn = document.getElementById('copyBtn');
+        const myCon = document.getElementById('myCon');
+        
+        let Obj = 
+            {          
+            name: 'amy',
+            chinese: 90,
+            english: 91,
+            math: 92,  
+            // 'sum': (x,y)=>x*y,
+            sum: function(){
+                let chineseValue = myChinese.value;
+                let englishValue = myEnglish.value;
+                let mathValue = myMath.value;
+                this.chinese = chineseValue ;
+                this.english = englishValue ;
+                this.math = mathValue ;
+                let sumAll = Number(chineseValue) + Number(englishValue) + Number(mathValue)      
+                return  sumAll
+            },
+            avg: function(){
+                let sum = this.sum();
+                let avg = Math.round(sum / 3 * 100 ) / 100 ;
+                return avg
+
+            }
+            };           
+                        
+        console.log(Obj.chinese);
+        console.log(Obj.english);
+        console.log(Obj.math);
+        console.log(Obj.sum());
+        console.log(Obj.avg());
+
+        myName.value = Obj.name;
+        myChinese.value = Obj.chinese;
+        myEnglish.value =Obj.english;
+        myMath.value = Obj.math;
+
+        myBtn.addEventListener('click',()=>{           
+            mySum.value = Obj.sum()
+            myAvg.value = Obj.avg()
+        })
+        copyBtn.addEventListener('click',()=>{
+            let myDiv = document.createElement('div')
+            myDiv.setAttribute('class','con')
+            console.log(myDiv);
+
+            let myInput = document.createElement('input')
+             console.log(myInput);
+            
+
+            
+
+            myDiv.appendChild(myInput)
+            myCon.appendChild(myDiv)
+
+
+        })
+    </script>
+</body>
+</html>
